@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+""" checking to see it works """
+
+from pymongo import MongoClient
+
+client = MongoClient('mongodb://localhost:27017/')
+
+database_list = client.list_database_names()
+
+for db_name in database_list:
+    print(db_name)
+
+client.close()
